@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>点击按钮显示时间</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+      }
+
+      .card {
+        width: min(92vw, 420px);
+        padding: 24px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      button {
+        border: none;
+        border-radius: 8px;
+        padding: 10px 16px;
+        background: #2563eb;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      #time {
+        margin-top: 14px;
+        font-size: 18px;
+        color: #111827;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>当前时间演示</h1>
+      <button id="showTimeBtn">显示当前时间</button>
+      <p id="time">点击按钮后会显示时间</p>
+    </div>
+
+    <script>
+      const showTimeBtn = document.getElementById("showTimeBtn");
+      const timeText = document.getElementById("time");
+
+      showTimeBtn.addEventListener("click", () => {
+        const now = new Date();
+        timeText.textContent = now.toLocaleString("zh-CN");
+      });
+    </script>
+  </body>
+</html>
